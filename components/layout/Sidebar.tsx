@@ -3,6 +3,7 @@ import { FaUser } from 'react-icons/fa';
 import { BiLogOut } from 'React-icons/bi'
 import SidebarLogo from './SidebarLogo';
 import SidebarItem from './SidebarItem';
+import SidebarTweetButton from './SidebarTweetButton';
 
 const Sidebar = () => {
     const items = [
