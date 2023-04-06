@@ -9,9 +9,26 @@ interface ButtonProps {
     outline?: boolean
 }
 
-const Button = () => {
+const Button: React.FC<ButtonProps> = ({
+    label,
+    secondary,
+    fullWidth,
+    large,
+    onClick,
+    disabled,
+    outline
+}) => {
     return (
-        <div></div>
+        <button className="
+            diasbled:opacity-70
+            disabled:cursor-not-allowed
+            rounded-full
+            font-semibold
+            hover:opacity-80transition
+            border-2
+        ">
+
+        </button>
     )
 }
 
