@@ -19,7 +19,10 @@ const Button: React.FC<ButtonProps> = ({
     outline
 }) => {
     return (
-        <button className={`
+        <button 
+        disabled={disabled}
+        onClick={onClick}
+        className={`
             diasbled:opacity-70
             disabled:cursor-not-allowed
             rounded-full
