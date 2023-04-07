@@ -1,3 +1,5 @@
+import { useCallback } from "react";
+
 interface ModalProps {
     isOpen?: boolean;
     onClose: () => void;
@@ -10,10 +12,23 @@ interface ModalProps {
 }
 
 
-const Modal = () => {
-    return(
-        <div></div>
-    )
+const Modal: React.FC<ModalProps> = ({
+    isOpen,
+    onClose,
+    onSubmit,
+    title,
+    body,
+    footer,
+    actionLabel,
+    disabled
+}) => {
+        const handleClose = useCallback(() => {
+            if (disabled) {
+                return;
+            }
+        }, []);
+
+       return (<div></div>)
 }
 
 export default Modal;
