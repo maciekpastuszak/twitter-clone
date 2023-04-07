@@ -72,6 +72,22 @@ const Modal: React.FC<ModalProps> = ({
            "
            >
             {/* Content */}
+            <div className="
+            h-full
+            lg:h-autoborder-0
+            rounded-lg
+            shadow-lg
+            relative
+            flex
+            flex-col
+            w-full
+            bg-black
+            outline-none
+            focus:outline-none
+            "
+            >
+
+            </div>
             </div> 
         </div>
        </>
