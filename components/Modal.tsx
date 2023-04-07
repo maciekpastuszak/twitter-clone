@@ -129,6 +129,7 @@ const Modal: React.FC<ModalProps> = ({
                         fullWidth 
                         large 
                         onClick={handleSubmit}/>
+                        {footer}
                     </div>
                 </div>
             </div> 
