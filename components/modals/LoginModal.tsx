@@ -1,5 +1,5 @@
 import useLoginModal from "@/hooks/useLoginModal";
-import { useState } from "react";
+import { useCallback, useState } from "react";
 
 const LoginModal = () => {
     const loginModal = useLoginModal();
@@ -7,6 +7,18 @@ const LoginModal = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [isLoading, setIsLoading] = useState(false);
+
+    const onSubmit = useCallback(async () => {
+        try {
+            setIsLoading(true);
+
+            // TODO ADD LOG IN
+
+            loginModal.onClose();
+        } catch (error) {
+            console.log(error);
+        }
+    }, []);
 
     return (
         <div></div>
