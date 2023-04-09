@@ -1,6 +1,7 @@
 import useLoginModal from "@/hooks/useLoginModal";
 import { useCallback, useState } from "react";
 import Input from "../Input";
+import Modal from "../Modal";
 
 const LoginModal = () => {
     const loginModal = useLoginModal();
@@ -41,7 +42,15 @@ const bodyContent = (
 )
 
     return (
-        <div></div>
+        <Modal 
+        disabled={isLoading}
+        isOpen={loginModal.isOpen}
+        title="Login"
+        actionLabel="Sign in"
+        onClose={loginModal.onClose}
+        onSubmit={onSubmit}
+        body={bodyContent}
+        />
     )
 }
 
