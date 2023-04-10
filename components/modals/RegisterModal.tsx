@@ -2,21 +2,25 @@ import useLoginModal from "@/hooks/useLoginModal";
 import { useCallback, useState } from "react";
 import Input from "../Input";
 import Modal from "../Modal";
+import useRegisterModal from "@/hooks/useRegisterModal";
 
 const RegisterModal = () => {
     const loginModal = useLoginModal();
+    const registerModal = useRegisterModal();
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [name, setName] = useState('');
+    const [username, setUsername] = useState('')
     const [isLoading, setIsLoading] = useState(false);
 
     const onSubmit = useCallback(async () => {
         try {
             setIsLoading(true);
 
-            // TODO ADD LOG IN
+            // TODO ADD REGISTER AND LOG IN
 
-            loginModal.onClose();
+            registerModal.onClose();
         } catch (error) {
             console.log(error);
         } finally {
