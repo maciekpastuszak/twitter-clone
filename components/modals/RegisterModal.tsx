@@ -37,6 +37,18 @@ const bodyContent = (
             disabled={isLoading}
         />
         <Input 
+            placeholder="Name"
+            onChange={(e) => setName(e.target.value)}
+            value={name}
+            disabled={isLoading}
+        />
+        <Input 
+            placeholder="Username"
+            onChange={(e) => setUsername(e.target.value)}
+            value={username}
+            disabled={isLoading}
+        />
+        <Input 
             placeholder="Password"
             onChange={(e) => setPassword(e.target.value)}
             value={password}
@@ -48,10 +60,10 @@ const bodyContent = (
     return (
         <Modal 
         disabled={isLoading}
-        isOpen={loginModal.isOpen}
-        title="Login"
-        actionLabel="Sign in"
-        onClose={loginModal.onClose}
+        isOpen={registerModal.isOpen}
+        title="Create and account"
+        actionLabel="Register"
+        onClose={registerModal.onClose}
         onSubmit={onSubmit}
         body={bodyContent}
         />
