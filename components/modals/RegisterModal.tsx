@@ -57,6 +57,20 @@ const bodyContent = (
     </div>
 )
 
+    const footerContent = (
+        <div className="text-neutral-400 text-center mt-4">
+            <p>Already have an account?
+                <span
+                className="
+                text-white
+                cursor-pointer
+                hover:underline
+                "> Sign in
+                </span>
+            </p>
+        </div>
+    )
+
     return (
         <Modal 
         disabled={isLoading}
@@ -66,6 +80,7 @@ const bodyContent = (
         onClose={registerModal.onClose}
         onSubmit={onSubmit}
         body={bodyContent}
+        footer={footerContent}
         />
     )
 }
