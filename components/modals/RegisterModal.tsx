@@ -61,7 +61,7 @@ const bodyContent = (
         <Modal 
         disabled={isLoading}
         isOpen={registerModal.isOpen}
-        title="Create and account"
+        title="Create an account"
         actionLabel="Register"
         onClose={registerModal.onClose}
         onSubmit={onSubmit}
