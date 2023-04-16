@@ -6,8 +6,9 @@ export default async function handler(
         }
 
         try {
-            
+            const { email. username, name, password} = req.body;
         } catch (error) {
             console.log(error)
+            return res.status(400).end()
         }
     }
