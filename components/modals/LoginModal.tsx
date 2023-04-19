@@ -45,9 +45,10 @@ const bodyContent = (
             onChange={(e) => setEmail(e.target.value)}
             value={email}
             disabled={isLoading}
-        />
+            />
         <Input 
             placeholder="Password"
+            type="password"
             onChange={(e) => setPassword(e.target.value)}
             value={password}
             disabled={isLoading}
