@@ -1,6 +1,6 @@
 import { useRouter } from 'next/router';
 import { useCallback } from 'react';
-import { BiArrowBack } from 'React-icons/bi';
+import { BiArrowBack } from 'react-icons/bi';
 
 interface HeaderProps {
     label: string;
