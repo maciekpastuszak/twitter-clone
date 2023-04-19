@@ -4,6 +4,7 @@ import Input from "../Input";
 import Modal from "../Modal";
 import useRegisterModal from "@/hooks/useRegisterModal";
 import axios from "axios";
+import { toast } from "react-hot-toast";
 
 const RegisterModal = () => {
     const loginModal = useLoginModal();
@@ -32,11 +33,14 @@ const RegisterModal = () => {
                 password,
                 username,
                 name
-            })
+            });
+
+            toast.success('Account created');
 
             registerModal.onClose();
         } catch (error) {
             console.log(error);
+            toast.error('Something went wrong.')
         } finally {
             setIsLoading(false)
         }
