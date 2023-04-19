@@ -7,7 +7,7 @@ import SidebarTweetButton from './SidebarTweetButton';
 import useCurrentUser from '@/hooks/useCurrentUser';
 
 const Sidebar = () => {
-    const { data, currentUser} = useCurrentUser();
+    const { data: currentUser} = useCurrentUser();
     const items = [
         {
             label: 'Home',
