@@ -3,6 +3,7 @@ import { ClipLoader } from "react-spinners";
 
 import Header from "@/components/Header";
 import useUser from "@/hooks/useUser";
+import UserHero from "@/components/users/UserHero";
 
 const UserView = () => {
     const router = useRouter();
@@ -19,7 +20,8 @@ const UserView = () => {
     }
     return (
         <>
-        <Header showBackArrow label={fetchedUser?.name}/>
+        <Header showBackArrow label={fetchedUser?.name} />
+        <UserHero userId={userId as string}
         </>
     );
 }
