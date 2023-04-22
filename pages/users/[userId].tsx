@@ -10,9 +10,16 @@ const UserView = () => {
 
     const { data: fetchedUser, isLoading } = useUser(userId as string)
 
+    if (isLoading || !fetchedUser) {
+        return (
+            <div className="flex justify-center items-center h-full">
+                <ClipLoader color="lightblue" size={80} />
+            </div>
+        )
+    }
     return (
         <>
-        <Header showBackArrow label="User Profile"/>
+        <Header showBackArrow label={fetchedUser?.name}/>
         </>
     );
 }
