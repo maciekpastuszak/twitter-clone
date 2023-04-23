@@ -38,6 +38,9 @@ const UserBio: React.FC<UserBioProps> = ( { userId } ) => {
                     <p className="text-white text-2xl font-semibold">
                         {fetchedUser?.name}
                     </p>
+                    <p className="text-md text-neutral-500"> 
+                        @{fetchedUser?.username}
+                    </p>
                 </div>
             </div>
         </div>
