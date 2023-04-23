@@ -33,6 +33,13 @@ const UserBio: React.FC<UserBioProps> = ( { userId } ) => {
                     secondary />
                 )}
             </div>
+            <div className="mt-8 px-4">
+                <div className="flex flex-col">
+                    <p className="text-white text-2xl font-semibold">
+                        {fetchedUser?.name}
+                    </p>
+                </div>
+            </div>
         </div>
     );
 }
