@@ -49,6 +49,14 @@ const UserBio: React.FC<UserBioProps> = ( { userId } ) => {
                     </p>
                     <div className="flex flex-row items-center gap-2 mt-4 text-neutal-500">
                         <BiCalendar size={24}/>
+                        <p>Joined {createAt}</p>
+                    </div>
+                </div>
+                <div className="flex flex-row items-center mt-4 gap-6">
+                    <div className="flex flex-row items-center gap-1">
+                        <p className="text-white">
+                            {fetchedUser?.followingIds?.length}
+                        </p>
                     </div>
                 </div>
             </div>
