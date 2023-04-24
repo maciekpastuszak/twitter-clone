@@ -12,16 +12,16 @@ interface UserBioProps {
 
 
 const UserBio: React.FC<UserBioProps> = ( { userId } ) => {
-    const { data:currentUser } = useCurrentUser();
+    const { data: currentUser } = useCurrentUser();
     const { data: fetchedUser } = useUser(userId);
 
-    const createAt = useMemo(() => {
-        if(!fetchedUser?.createAt) {
+    const createdAt = useMemo(() => {
+        if(!fetchedUser?.createdAt) {
             return null;
         }
         
-        return format(new Date(fetchedUser.createAt), 'MMMM yyyy');
-    }, [fetchedUser?.createAt]);
+        return format(new Date(fetchedUser.createdAt), 'MMMM yyyy');
+    }, [fetchedUser?.createdAt]);
     return (
         <div className="border-b-[1px] border-neutral-800 pb-4">
             <div className="flex justify-end p-2">
@@ -47,9 +47,9 @@ const UserBio: React.FC<UserBioProps> = ( { userId } ) => {
                     <p className="text-white">
                         {fetchedUser?.bio}
                     </p>
-                    <div className="flex flex-row items-center gap-2 mt-4 text-neutal-500">
-                        <BiCalendar size={24}/>
-                        <p>Joined {createAt}</p>
+                    <div className="flex flex-row items-center gap-2 mt-4 text-neutral-500">
+                        <BiCalendar size={24} />
+                        <p>Joined {createdAt}</p>
                     </div>
                 </div>
                 <div className="flex flex-row items-center mt-4 gap-6">
