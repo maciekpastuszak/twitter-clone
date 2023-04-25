@@ -38,12 +38,17 @@ const EditModal = () => {
                 profileImage,
                 coverImage
             });
+            mutateFetchedUser();
+
+            toast.success('Updated');
+
+            editModal.onClose();
         } catch (error) {
             toast.error('Something went wrong');
         } finally {
             setIsLoading(false)
         }
-    }, [])
+    }, [bio, name, username, profileImage, coverImage, editModal, mutateFetchedUser])
 
     return (
         <div></div>
