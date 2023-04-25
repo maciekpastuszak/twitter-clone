@@ -7,6 +7,7 @@ import useUser from "@/hooks/useUser";
 import { toast } from "react-hot-toast";
 import axios from "axios";
 import Modal from "../Modal";
+import Input from "../Input";
 
 const EditModal = () => {
     const { data: currentUser } = useCurrentUser();
@@ -51,6 +52,17 @@ const EditModal = () => {
             setIsLoading(false)
         }
     }, [bio, name, username, profileImage, coverImage, editModal, mutateFetchedUser])
+
+    const bodyContent = (
+        <div className="flex flex-col gap-4">
+            <Input 
+                placeholder="Name"
+                onChange={(e) => setName(e.target.value)}
+                value={name}
+                disabled={isLoading}
+            />
+        </div>
+    )
 
     return (
         <Modal 
