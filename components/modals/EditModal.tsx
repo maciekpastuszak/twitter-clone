@@ -3,8 +3,10 @@ import { useCallback, useEffect, useState } from "react";
 import useCurrentUser from "@/hooks/useCurrentUser";
 import useEditModal from "@/hooks/useEditModal";
 import useUser from "@/hooks/useUser";
+
 import { toast } from "react-hot-toast";
 import axios from "axios";
+import Modal from "../Modal";
 
 const EditModal = () => {
     const { data: currentUser } = useCurrentUser();
@@ -51,7 +53,14 @@ const EditModal = () => {
     }, [bio, name, username, profileImage, coverImage, editModal, mutateFetchedUser])
 
     return (
-        <div></div>
+        <Modal 
+            disabled={isLoading}
+            isOpen={editModal.isOpen}
+            title="Edit your profile"
+            actionLabel="Save"
+            onClose={editModal.onClose}
+            onSubmit={onSubmit}
+        />
     )
 }
 
