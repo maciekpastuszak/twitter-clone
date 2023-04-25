@@ -61,6 +61,18 @@ const EditModal = () => {
                 value={name}
                 disabled={isLoading}
             />
+            <Input 
+                placeholder="Username"
+                onChange={(e) => setUsername(e.target.value)}
+                value={username}
+                disabled={isLoading}
+            />
+            <Input 
+                placeholder="Bio"
+                onChange={(e) => setBio(e.target.value)}
+                value={bio}
+                disabled={isLoading}
+            />
         </div>
     )
 
@@ -72,6 +84,7 @@ const EditModal = () => {
             actionLabel="Save"
             onClose={editModal.onClose}
             onSubmit={onSubmit}
+            body={bodyContent}
         />
     )
 }
