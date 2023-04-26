@@ -58,7 +58,7 @@ const ImageUpload: React.FC<ImageUploadProps> = ({
           />
         </div>
       ) : (
-        <p className="tex-white">{label}</p>
+        <p className="text-white">{label}</p>
       )}
         </div>
     )
