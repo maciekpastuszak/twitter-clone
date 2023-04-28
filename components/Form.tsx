@@ -8,6 +8,7 @@ import usePosts from "@/hooks/usePosts";
 import useRegisterModal from "@/hooks/useRegisterModal";
 
 import Button from "./Button";
+import Avatar from "./Avatar";
 
 interface FormProps {
     placeholder: string;
@@ -49,7 +50,32 @@ const Form: React.FC<FormProps> = ({
     return (
         <div className="border-b-[1px] border-neutral-800 px-5 py-2">
             {currentUser ? (
-                <div></div>
+                <div className="flex flex-row gap-4">
+                    <div>
+                        <Avatar userId={currentUser?.id}/>
+                    </div>
+                    <div className="w-full">
+                        <textarea
+                            disabled={isLoading}
+                            onChange={(event) => setBody(event.target.value)}
+                            value={body}
+                            className="
+                                disabled:opacity-80
+                                peer
+                                resize-none 
+                                mt-3 
+                                w-full 
+                                bg-black 
+                                ring-0 
+                                outline-none 
+                                text-[20px] 
+                                placeholder-neutral-500 
+                                text-white
+                            "
+                            placeholder={placeholder}>
+                        </textarea>
+                    </div>
+                </div>
             ) : (
             <div className="py-8">
                 <h1 className="text-white text-2xl text-center mb-4 font-bold">
