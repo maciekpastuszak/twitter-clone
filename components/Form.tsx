@@ -1,10 +1,13 @@
+import axios from "axios";
+import { useCallback, useState } from "react";
+import { toast } from "react-hot-toast";
+
 import useCurrentUser from "@/hooks/useCurrentUser";
 import useLoginModal from "@/hooks/useLoginModal";
 import usePosts from "@/hooks/usePosts";
 import useRegisterModal from "@/hooks/useRegisterModal";
-import axios from "axios";
-import { useCallback, useState } from "react";
-import { toast } from "react-hot-toast";
+
+import Button from "./Button";
 
 interface FormProps {
     placeholder: string;
@@ -49,6 +52,10 @@ const Form: React.FC<FormProps> = ({
                 <h1 className="text-white text-2xl text-center mb-4 font-bold">
                     Welcome to Twitter
                 </h1>
+                <div className="flex flex-row items-center justify-center gap-4">
+                    <Button label="Login" onClick={loginModal.onOpen}/>
+                    <Button label="Register" onClick={registerModal.onOpen} secondary/>
+                </div>
             </div>
         </div>
     )
