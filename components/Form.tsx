@@ -74,6 +74,15 @@ const Form: React.FC<FormProps> = ({
                             "
                             placeholder={placeholder}>
                         </textarea>
+                        <hr 
+                            className="
+                                opacity-0 
+                                peer-focus:opacity-100 
+                                h-[1px] 
+                                w-full 
+                                border-neutral-800 
+                                transition"
+                            />
                     </div>
                 </div>
             ) : (
