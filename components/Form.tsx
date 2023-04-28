@@ -48,6 +48,9 @@ const Form: React.FC<FormProps> = ({
 
     return (
         <div className="border-b-[1px] border-neutral-800 px-5 py-2">
+            {currentUser ? (
+                <div></div>
+            ) : (
             <div className="py-8">
                 <h1 className="text-white text-2xl text-center mb-4 font-bold">
                     Welcome to Twitter
@@ -57,6 +60,7 @@ const Form: React.FC<FormProps> = ({
                     <Button label="Register" onClick={registerModal.onOpen} secondary/>
                 </div>
             </div>
+            )}
         </div>
     )
 }
