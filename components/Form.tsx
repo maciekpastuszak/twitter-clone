@@ -44,7 +44,13 @@ const Form: React.FC<FormProps> = ({
     }, [body, mutatePosts]);
 
     return (
-        <div></div>
+        <div className="border-b-[1px] border-neutral-800 px-5 py-2">
+            <div className="py-8">
+                <h1 className="text-white text-2xl text-center mb-4 font-bold">
+                    Welcome to Twitter
+                </h1>
+            </div>
+        </div>
     )
 }
 
