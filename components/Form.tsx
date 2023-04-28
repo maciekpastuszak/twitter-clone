@@ -2,7 +2,9 @@ import useCurrentUser from "@/hooks/useCurrentUser";
 import useLoginModal from "@/hooks/useLoginModal";
 import usePosts from "@/hooks/usePosts";
 import useRegisterModal from "@/hooks/useRegisterModal";
+import axios from "axios";
 import { useCallback, useState } from "react";
+import { toast } from "react-hot-toast";
 
 interface FormProps {
     placeholder: string;
@@ -24,13 +26,22 @@ const Form: React.FC<FormProps> = ({
     const [body, setBody] = useState("");
     const [isLoading, setIsLoading] = useState(false);
 
-    const onSubmit = useCallback(async () => (
+    const onSubmit = useCallback(async () => {
         try {
-            try
-        } catch (error) {
-            
-        }
-    ))
+            setIsLoading(true);
+      
+            await axios.post('/api/posts', { body });
+      
+            toast.success('Tweet created');
+
+            setBody('');
+            mutatePosts();
+          } catch (error) {
+            toast.error('Something went wrong');
+          } finally {
+            setIsLoading(false);
+          }
+    }, [body, mutatePosts]);
 
     return (
         <div></div>
