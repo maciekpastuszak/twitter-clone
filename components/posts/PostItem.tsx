@@ -3,6 +3,7 @@ import useLoginModal from "@/hooks/useLoginModal";
 import { formatDistanceToNowStrict } from "date-fns";
 import { useRouter } from "next/router";
 import { useCallback, useMemo } from "react";
+import Avatar from "../Avatar";
 
 interface PostItemProps {
     data: Record<string, any>;
@@ -48,7 +49,7 @@ const PostItem: React.FC<PostItemProps> = ({data, userId}) => {
         transition"
         >
             <div className="flex flex-row items-start gap-3">
-
+                <Avatar userId={data.user.id}/>
             </div>
         </div>
     )
