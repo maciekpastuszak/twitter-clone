@@ -52,17 +52,24 @@ const PostItem: React.FC<PostItemProps> = ({data, userId}) => {
                 <Avatar userId={data.user.id}/>
                 <div>
                     <div className="flex flex-row items-center gap-2">
-                        <p className="
+                        <p 
+                        onClick={goToUser}
+                        className="
                         text-white 
                         font-semibold 
                         cursor-pointer 
                         hover:underline">{data.user.name}</p>
-                        <span className="
+                        <span 
+                        onClick={goToUser}
+                        className="
                         text-neutral-500 
                         cursor-pointer 
                         hover:underline 
                         hidden 
                         md:block">@{data.user.username}</span>
+                        <span className="text-neutral-500 text-sm">
+                            {createdAt}
+                        </span>
                     </div>
                 </div>
             </div>
