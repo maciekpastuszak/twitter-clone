@@ -22,8 +22,18 @@ export default async function handler(
             where: {
                 id: userId
             }
-        })
+        });
 
+        if (!user) {
+            throw new Error('Invalid ID');
+        }
+
+        let updatedFollowingIds = [...(user.followingIds || [])]
+
+        if (req.method === 'POST') {
+            updatedFollowingIds.push(userId)
+        }
+        
     } catch (error) {
         console.log(error)
         return res.status(400).end()
