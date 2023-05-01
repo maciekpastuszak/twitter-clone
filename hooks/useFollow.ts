@@ -20,4 +20,10 @@ const useFollow = (userId: string) => {
           return loginModal.onOpen();
         }
     }
-}
+    return {
+        isFollowing,
+        toggleFollow,
+      }
+    }
+
+export default useFollow;
