@@ -34,7 +34,7 @@ export default async function handler(
             updatedFollowingIds.push(userId)
         }
 
-        if (eq.method === 'DELETE') {
+        if (req.method === 'DELETE') {
             updatedFollowingIds = 
             updatedFollowingIds.filter(followingId => followingId !== userId)
         }
