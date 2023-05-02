@@ -1,7 +1,10 @@
 import { useCallback, useMemo } from "react";
+import { toast } from "react-hot-toast";
+
 import useCurrentUser from "./useCurrentUser"
 import useLoginModal from "./useLoginModal";
 import useUser from "./useUser";
+
 
 const useFollow = (userId: string) => {
     const { data: currentUser, mutate: mutateCurrentUser } = useCurrentUser();
@@ -13,17 +16,16 @@ const useFollow = (userId: string) => {
         const list = currentUser?.followingIds || [];
     
         return list.includes(userId);
-      }, [currentUser, userId]);
+      }, [currentUser?.followingIds, userId]);
     
-      const toggleFollow = useCallback(async () => {
+      const toggleFollow = useCallback(() => {
         if (!currentUser) {
           return loginModal.onOpen();
         }
-    }
-    return {
-        isFollowing,
-        toggleFollow,
-      }
-    }
-
-export default useFollow;
+        try {
+            let request;
+            
+        } catch (error) {
+            toast.error('Something went wrong')
+        }
+    }, []);
