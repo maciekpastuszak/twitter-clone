@@ -49,3 +49,5 @@ const useFollow = (userId: string) => {
         toggleFollow
     }
 }
+
+export default useFollow;
