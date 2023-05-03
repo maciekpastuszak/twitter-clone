@@ -1,6 +1,9 @@
 import usePost from "@/hooks/usePost";
 import { ClipLoader } from "react-spinners";
 import { useRouter } from "next/router";
+import Header from "@/components/Header";
+import PostItem from "@/components/posts/PostItem";
+import Form from "@/components/Form";
 
 const PostView = () => {
     const router = useRouter();
@@ -16,9 +19,15 @@ const PostView = () => {
         )
     }
     return (
-        <div>
-
-        </div>
+        <>
+            <Header label="Tweet" showBackArrow />
+            <PostItem data={ fetchedPost }/>
+            <Form 
+                postId={postId as string}
+                isComment
+                placeholder="Tweet your replypo"
+            />
+        </>
     )
 }
 
