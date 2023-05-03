@@ -1,4 +1,6 @@
+import serverAuth from "@/libs/serverAuth";
 import { NextApiRequest, NextApiResponse } from "next";
+import prisma from "@/libs/prismadb";
 
 export default async function handler(
     req: NextApiRequest,
@@ -9,6 +11,13 @@ export default async function handler(
     }
 
     try {
+        const { postId } = req.body;
+
+        const { currentUser } = await serverAuth(req,res)
+
+        if (!postId || typeof postId !== 'string') {
+            throw new Error('Invalid ID');
+          }
         
     } catch (error) {
         console.log(error)
