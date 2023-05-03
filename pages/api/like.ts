@@ -28,6 +28,12 @@ export default async function handler(
           if (!post) {
             throw new Error('Invalid ID');
           }
+          let updatedLikedIds = [...(post.likedIds || [])];
+
+          if (req.method === 'POST') {
+            updatedLikedIds.push(currentUser.id);
+          }
+          
         
     } catch (error) {
         console.log(error)
