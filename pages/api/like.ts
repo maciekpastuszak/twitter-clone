@@ -18,6 +18,16 @@ export default async function handler(
         if (!postId || typeof postId !== 'string') {
             throw new Error('Invalid ID');
           }
+
+          const post = await prisma.post.findUnique({
+            where: {
+              id: postId
+            }
+          });
+      
+          if (!post) {
+            throw new Error('Invalid ID');
+          }
         
     } catch (error) {
         console.log(error)
