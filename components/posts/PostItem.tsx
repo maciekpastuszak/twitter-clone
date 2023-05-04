@@ -5,6 +5,7 @@ import { useRouter } from "next/router";
 import { useCallback, useMemo } from "react";
 import Avatar from "../Avatar";
 import { AiOutlineHeart, AiOutlineMessage } from "react-icons/ai";
+import useLike from "@/hooks/useLike";
 
 interface PostItemProps {
     data: Record<string, any>;
@@ -16,6 +17,7 @@ const PostItem: React.FC<PostItemProps> = ({data, userId}) => {
     const loginModal = useLoginModal();
 
     const { data:currentUser } = useCurrentUser()
+    const { hasLiked, toggleLike } = useLike({ postid: data.id, userid });
 
     const goToUser = useCallback((event: any) => {
         event.stopPropagation();
@@ -29,9 +31,12 @@ const PostItem: React.FC<PostItemProps> = ({data, userId}) => {
 
     const onLike = useCallback((event: any) => {
         event.stopPropagation();
-    
-        loginModal.onOpen();
-      }, [loginModal]);
+        if (!currentUser){
+           return loginModal.onOpen();
+        }
+
+        toggleLike();
+      }, [loginModal, currentUser, toggleLike]);
 
     const createdAt = useMemo(() => {
         if (!data?.createdAt) {
