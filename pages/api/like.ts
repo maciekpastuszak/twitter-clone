@@ -33,7 +33,21 @@ export default async function handler(
           if (req.method === 'POST') {
             updatedLikedIds.push(currentUser.id);
           }
+
+          if (req.method === 'DELETE') {
+            updatedLikedIds = updatedLikedIds.filter((likedId) => likedId !== currentUser?.id);
+          }
+
+          const updatedPost = await prisma.post.update({
+            where: {
+                id: postId
+            },
+            data: {
+                likedIds: updatedLikedIds
+            }
+          });
           
+          return res.status(200).json(updatedPost);
         
     } catch (error) {
         console.log(error)
