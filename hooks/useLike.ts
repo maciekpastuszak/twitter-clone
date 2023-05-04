@@ -1,3 +1,4 @@
+import { useMemo } from "react";
 import useCurrentUser from "./useCurrentUser";
 import useLoginModal from "./useLoginModal";
 import usePost from "./usePost";
@@ -9,4 +10,10 @@ const useLike = ({ postId, userId } : { postId: string, userId?: string }) => {
     const { mutate: mutateFetchedPosts } = usePosts(userId);
 
     const loginModal = useLoginModal();
+
+    const hasLiked = useMemo(() => {
+        const list = fetchedPost?.likedIds || [];
+
+        return list.includes(currentUser?.id)
+    }, [currentUser?.is, fetchedPost?.likedIds]);
 }
