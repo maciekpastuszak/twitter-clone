@@ -25,7 +25,19 @@ const useLike = ({ postId, userId } : { postId: string, userId?: string }) => {
         }
 
         try {
-          
+            let request;
+
+            if (hasLiked) {
+                request = () => axios.delete('/api/like', { data: { postId } });
+              } else {
+                request = () => axios.post('/api/like', { postId });
+              }
+
+            await request();
+            mutateFetchedPost();
+            mutateFetchedPosts();
+
+            toast.success('Success');
         
             
         } catch (error) {
