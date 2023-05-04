@@ -17,7 +17,7 @@ const PostItem: React.FC<PostItemProps> = ({data, userId}) => {
     const loginModal = useLoginModal();
 
     const { data:currentUser } = useCurrentUser()
-    const { hasLiked, toggleLike } = useLike({ postid: data.id, userid });
+    const { hasLiked, toggleLike } = useLike({ postId: data.id, userId});
 
     const goToUser = useCallback((event: any) => {
         event.stopPropagation();
