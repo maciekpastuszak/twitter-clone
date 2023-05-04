@@ -50,4 +50,11 @@ const useLike = ({ postId, userId } : { postId: string, userId?: string }) => {
         mutateFetchedPosts,
         loginModal
     ]);
-}
+
+    return {
+        hasLiked,
+        toggleLike
+    }
+};
+
+export default useLike
