@@ -27,6 +27,7 @@ const PostView = () => {
                 isComment
                 placeholder="Tweet your replypo"
             />
+            <CommentFeed comments={fetchedPost?.comments} />
         </>
     )
 }
