@@ -33,8 +33,10 @@ const Form: React.FC<FormProps> = ({
     const onSubmit = useCallback(async () => {
         try {
             setIsLoading(true);
+
+            const url = isComment ? `/api/comments?postid=${postId}` : '/api/posts';
       
-            await axios.post('/api/posts', { body });
+            await axios.post(url, { body });
       
             toast.success('Tweet created');
 
@@ -45,7 +47,7 @@ const Form: React.FC<FormProps> = ({
           } finally {
             setIsLoading(false);
           }
-    }, [body, mutatePosts]);
+    }, [body, mutatePosts, isComment, postId]);
 
     return (
         <div className="border-b-[1px] border-neutral-800 px-5 py-2">
