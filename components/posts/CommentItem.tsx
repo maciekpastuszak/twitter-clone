@@ -1,6 +1,7 @@
 import { formatDistanceToNowStrict } from "date-fns";
 import { useRouter } from "next/router";
 import { useCallback, useMemo } from "react";
+import Avatar from "../Avatar";
 
 interface CommentItemProps {
     data: Record<string, any>
@@ -33,7 +34,17 @@ const createdAt = useMemo(() => {
         transition
         ">
             <div className="flex flex-row items-start gap-3">
-                
+                <Avatar userId={data.user.id} />
+                <div className="flex flex-row items-center gap-2">
+                    <p className="
+                     text-white 
+                     font-semibold 
+                     cursor-pointer 
+                     hover:underline
+                    ">
+
+                    </p>
+                </div>
             </div>
         </div>
     )
