@@ -55,6 +55,9 @@ const createdAt = useMemo(() => {
                     ">
                         @{data.user.username}
                     </span>
+                    <span className="text-neutral-500 text-sm">
+                        {createdAt}
+                    </span>
                 </div>
             </div>
         </div>
