@@ -24,7 +24,18 @@ const createdAt = useMemo(() => {
 }, [data?.createdAt])
 
     return (
-        <div></div>
+        <div className="
+        border-b-[1px] 
+        border-neutral-800 
+        p-5 
+        cursor-pointer 
+        hover:bg-neutral-900 
+        transition
+        ">
+            <div className="flex flex-row items-start gap-3">
+                
+            </div>
+        </div>
     )
 }
 
