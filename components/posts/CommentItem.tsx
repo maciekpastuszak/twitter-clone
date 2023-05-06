@@ -47,7 +47,7 @@ const createdAt = useMemo(() => {
                         {data.user.name}
                     </p>
                     <span className="
-                        text-neutal-500
+                        text-neutral-500
                         cursor-pointer
                         hover:underline
                         hidden
