@@ -36,14 +36,25 @@ const createdAt = useMemo(() => {
             <div className="flex flex-row items-start gap-3">
                 <Avatar userId={data.user.id} />
                 <div className="flex flex-row items-center gap-2">
-                    <p className="
+                    <p 
+                    onClick={goToUser}
+                    className="
                      text-white 
                      font-semibold 
                      cursor-pointer 
                      hover:underline
                     ">
-
+                        {data.user.name}
                     </p>
+                    <span className="
+                        text-neutal-500
+                        cursor-pointer
+                        hover:underline
+                        hidden
+                        md:block
+                    ">
+                        @{data.user.username}
+                    </span>
                 </div>
             </div>
         </div>
