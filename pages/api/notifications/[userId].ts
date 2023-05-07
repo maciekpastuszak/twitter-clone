@@ -26,7 +26,15 @@ export default async function handler(
                 createdAt: 'desc'
             }
         });
-        
+
+        await prisma.user.update({
+            where: {
+              id: userId
+            },
+            data: {
+              hasNotification: false,
+            }
+          });
     } catch (error) {
         console.log(error)
         return res.status(400).end();
