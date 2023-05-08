@@ -24,7 +24,7 @@ if (fetchedNotifications.length === 0) {
             {fetchedNotifications.map((notification: Record<string, any>) => (
             <div key={notification.id} className="flex flex-row items-center p-6 gap-4 border-b-[1px] border-neutral-800">
                 <BsTwitter color="white" size={32} />
-                <p>
+                <p className="text-white">
                     {notification.body}
                 </p>
             </div>
