@@ -1,6 +1,10 @@
+import Header from "@/components/Header";
+
 const Notifications = () => {
     return (
-        <div></div>
+       <>
+       <Header label="Notifications" showBackArrow/> 
+       </>
     )
 }
 
