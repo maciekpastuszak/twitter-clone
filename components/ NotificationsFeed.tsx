@@ -19,7 +19,11 @@ if (fetchedNotifications.length === 0) {
   }
 
     return (
-        <div></div>
+        <div className="flex flex-col">
+            {fetchedNotifications.map((notification: Record<string, any>) => (
+        
+        ))}
+        </div>
     );
 }
 
