@@ -10,6 +10,14 @@ useEffect(() => {
     mutateCurrentUser();
 }, [mutateCurrentUser]);
 
+if (fetchedNotifications.length === 0) {
+    return (
+      <div className="text-neutral-600 text-center p-6 text-xl">
+        No notifications
+      </div>
+    )
+  }
+
     return (
         <div></div>
     );
