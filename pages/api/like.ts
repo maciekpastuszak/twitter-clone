@@ -34,6 +34,17 @@ export default async function handler(
             updatedLikedIds.push(currentUser.id);
           }
 
+          try {
+            const post = await prisma.post.findUnique({
+              where: {
+                id: postId,
+              }
+            });
+            }
+          } catch(error) {
+            console.log(error);
+          }
+
           if (req.method === 'DELETE') {
             updatedLikedIds = updatedLikedIds.filter((likedId) => likedId !== currentUser?.id);
           }
